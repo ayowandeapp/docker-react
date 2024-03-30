@@ -9,7 +9,8 @@ COPY . .
 
 RUN npm run build
 
-# to run in a production server 
+# to run in a production server  
 FROM nginx
+EXPOSE 80
 
 COPY --from=builder /app/build /usr/share/nginx/html
